@@ -672,6 +672,11 @@ Based on this definition the margin is a number that is always between -1 and +1
 \item Boosting tends to increase the margin on all of the examples, given the weak learning assumption i.e. pushes the margin to the right closer to one. 
 \item If the examples have large margin, then that translates into better generalization performance and it is possible to prove a bound that is completely independent of $T$ which still depends on $d$, the complexity of the weak hypotheses but it is completely independent of the number of rounds.
 \end{enumerate}
+The bound in the second item above is based on finding the fraction of the training examples with margin less than or equal to $\theta$. The upper bound would then be of the form  
+\begin{align}
+\mathrm{err}(H) \le \mathrm{Pr}[\mathrm{margin}(x,y) \le \theta] + \tilde{O} \left( \sqrt{\frac{\frac{d}{\theta^2} + \log(\frac{1}{\delta})}{m}}\right),
+\end{align}
+which does not depend on $T$.
 \bibliographystyle{plain}
 \bibliography{boosting-bib}
 \end{document}
